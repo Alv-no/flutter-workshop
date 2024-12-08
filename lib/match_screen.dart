@@ -65,9 +65,6 @@ class MatchScreenState extends State<MatchScreen> {
               ),
               const SizedBox(height: 60),
               ElevatedButton(
-                  onPressed: () {}, child: const Text("Angre poeng")),
-              const SizedBox(height: 20),
-              ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context,

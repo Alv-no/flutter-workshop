@@ -3,14 +3,19 @@
 Dette intro-prosjektet til Flutter er lagt opp som en workshop og er for helt nybegynnere. Workshoppen består av et sett med oppgaver, med korte forklaringer etter hver oppgave. Workshoppen er designet til å ta minst 15 minutter, men det vet vi ikke før vi har prøvd :) 
 
 
+Siden styling krever litt innsats og graving i dokumentasjon fokuserer workshoppen mest på implementering av funksjonalitet. Føl deg fri til å endre på UI som du vil underveis.
+
 ## Bakgrunn for prosjektet i denne workshoppen
-Det går rykter om at mange Alver (les; Eirik S) har gått seg lei av å holde stillingen i bordtennis-kampene de spiller.  
+Det går rykter om at mange Alver (les; Eirik S) har gått lei av å holde stillingen i bordtennis-kampene de spiller. Det er altfor manuelt og alt manuelt må automatiseres!  
+
 Etter mye om og men har ledelsen gått med å sette i gang et nytt internprosjekt fordi behovet er så enormt. 
 Siden de har hørt at du nå har blitt flutter ekspert, har du fått i oppgave å implementere appen. 
 Heldigvis har en av våre flinke teknologiledere brutt ned utviklingen i et sett med oppgaver. Disse skal du nå løse. 
 
 ### Hovedfunksjonalitet 
-Hovedfunksjonaliteten til appen vil i første omgang kun ta for seg å tracke enkeltkamper lokalt. 
+Hovedfunksjonaliteten til appen vil i første omgang kun ta for seg å holde stillingen i enkeltkamper lokalt. 
+
+
 For å oppnå dette trenger vi følgende: 
 
 1. En bruker skal kunne legge inn navn på to spillere som fritekst og starte en kamp mellom disse. 
@@ -20,11 +25,15 @@ For å oppnå dette trenger vi følgende:
 ## Jobbe lokalt eller i nettleser?
 
 Har du flutter installert så kjør lokalt i simulator eller i nettleser. Har du ikke flutter installert, bør du jobbe i nettleser via denne linken: TODO. 
-Time is of the essence. 
+Time is of the essence.
+
+Det er mulig å jobbe direkte i nettleser med linken: https://zapp.run/github/Alv-no/flutter-workshop. 
 
 
 ## Oppgaver
 Som nevnt over skal du implementere en bordtennis-poengstillingsholder :fire: ved å løse oppgavene du har fått nedenfor.
+
+For hver oppgave (utenom 1) finnes det en git-branch og en tilhørende branch for løsningen, feks `task-2` og `task-2-solution`. Det kan komme godt med hvis man vil hoppe mellom oppgaver eller tilbakestille fremgangen. Jobber du i nettleser i `zap.run` går du til url'en for riktig branch: https://zapp.run/github/Alv-no/flutter-workshop/tree/<BRANCH_NAME>, f.eks https://zapp.run/github/Alv-no/flutter-workshop/tree/task-2.
 
 ### Oppgave 1 - Skipp og hoi!
 Vi starter enkelt: Bli kjent med oppsettet av prosjektet og start appen. Gå inn i `lib/main.dart` og `lib/home_screen.dart` og se hva som er der.
@@ -226,3 +235,12 @@ class ResultScreen extends StatelessWidget {
 
 </details>
 
+
+
+### Ekstraoppgaver 
+Ekstraoppgaver det ikke finnes løsningsforslag på er som følger: 
+
+- Funksjonalitet for å angre/fjerne forrige poeng (dekrementere)
+- Legge til modal som spør bekreftelse på at man ønsker å avslutte kampen etter knapp-trykk.
+- Legge til lokal lagring vha SharedPreferences
+- Generelle forbedringer på UI
