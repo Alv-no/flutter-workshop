@@ -72,8 +72,6 @@ Hint: Bruk `Navigation.push()` - https://docs.flutter.dev/cookbook/navigation/na
 
 <details><summary>🚨Løsningsforslag</summary>
 
-
-
 ```
 ElevatedButton(
     onPressed: () {
