@@ -1,9 +1,7 @@
-import 'package:alv_pong/match_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  final TextEditingController player1Controller = TextEditingController();
-  final TextEditingController player2Controller = TextEditingController();
+  // TODO 2.1: Legg til felter av en passende datatype til å holde styr på text-inputs for navn.
 
   HomeScreen({super.key});
 
@@ -17,25 +15,20 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
-                  controller: player1Controller,
+                  // TODO 2.1: send med feltet du lagde for første spiller
                   decoration: const InputDecoration(labelText: "Spiller 1"),
                 ),
                 const SizedBox(height: 5),
                 TextField(
-                  controller: player2Controller,
+                  // TODO 2.1: send med feltet du lagde for andre spiller
                   decoration: const InputDecoration(labelText: "Spiller 2"),
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MatchScreen(
-                                  player1: player1Controller.text,
-                                  player2: player2Controller.text)));
+                      // TODO 2.2: Gå til MatchScreen og send med spillernavn.
                     },
-                    child: const Text("Start matchen"))
+                    child: const Text("Start matchen!"))
               ],
             )));
   }

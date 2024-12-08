@@ -1,4 +1,3 @@
-import 'package:alv_pong/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class MatchScreen extends StatefulWidget {
@@ -12,9 +11,6 @@ class MatchScreen extends StatefulWidget {
 }
 
 class MatchScreenState extends State<MatchScreen> {
-  int player1Score = 0;
-  int player2Score = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +25,8 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player1),
-                      Text("$player1Score",
-                          style: const TextStyle(fontSize: 64)),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              player1Score++;
-                            });
-                          },
-                          child: const Text("+ 1"))
+                      Text("0", style: const TextStyle(fontSize: 64)),
+                      ElevatedButton(onPressed: () {}, child: const Text("+ 1"))
                     ],
                   ),
                   const Column(
@@ -50,36 +39,15 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player2),
-                      Text("$player2Score",
-                          style: const TextStyle(fontSize: 64)),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              player2Score++;
-                            });
-                          },
-                          child: const Text("+1"))
+                      Text("0", style: const TextStyle(fontSize: 64)),
+                      ElevatedButton(onPressed: () {}, child: const Text("+1"))
                     ],
                   )
                 ],
               ),
               const SizedBox(height: 60),
               ElevatedButton(
-                  onPressed: () {}, child: const Text("Angre poeng")),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ResultScreen(
-                                  player1Name: widget.player1,
-                                  player2Name: widget.player2,
-                                  player1Score: player1Score,
-                                  player2Score: player2Score,
-                                )));
-                  },
-                  child: const Text("Kampen er ferdig"))
+                  onPressed: () {}, child: const Text("Kampen er ferdig"))
             ])));
   }
 }
