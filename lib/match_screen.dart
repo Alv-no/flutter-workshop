@@ -11,7 +11,9 @@ class MatchScreen extends StatefulWidget {
 }
 
 class MatchScreenState extends State<MatchScreen> {
-  // TODO 3.1: Legge til felter for å holde på poengene til spiller 1 og 2.
+  // Vi legger til state som felter på state-klassen
+  int player1Score = 0;
+  int player2Score = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,15 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player1),
-                      // TODO 3.2: vis fram poengene til spiller 1
-                      Text("0", style: const TextStyle(fontSize: 64)),
+                      Text("$player1Score",
+                          style: const TextStyle(fontSize: 64)),
                       ElevatedButton(
-                          // TODO 3.3: Oppdater poengsummen til spiller 2
-                          onPressed: () {},
+                          // Vi bruker setState for å inkrementere poengsummen
+                          onPressed: () {
+                            setState(() {
+                              player1Score++;
+                            });
+                          },
                           child: const Text("+ 1"))
                     ],
                   ),
@@ -45,11 +51,15 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player2),
-                      // TODO 3.2: vis fram poengene til spiller 2
-                      Text("0", style: const TextStyle(fontSize: 64)),
+                      Text("$player2Score",
+                          style: const TextStyle(fontSize: 64)),
                       ElevatedButton(
-                          // TODO 3.3: Oppdater poengsummen til spiller 2
-                          onPressed: () {},
+                          // Vi bruker setState for å inkrementere poengsummen
+                          onPressed: () {
+                            setState(() {
+                              player2Score++;
+                            });
+                          },
                           child: const Text("+1"))
                     ],
                   )
