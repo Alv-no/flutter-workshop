@@ -27,11 +27,13 @@ For å oppnå dette trenger vi følgende:
 Har du flutter installert så kjør lokalt i simulator eller i nettleser. Har du ikke flutter installert, bør du jobbe i nettleser via denne linken: TODO. 
 Time is of the essence.
 
-
+Det er mulig å jobbe direkte i nettleser med linken: https://zapp.run/github/Alv-no/flutter-workshop. 
 
 
 ## Oppgaver
 Som nevnt over skal du implementere en bordtennis-poengstillingsholder :fire: ved å løse oppgavene du har fått nedenfor.
+
+For hver oppgave (utenom 1) finnes det en git-branch og en tilhørende branch for løsningen, feks `task-2` og `task-2-solution`. Det kan komme godt med hvis man vil hoppe mellom oppgaver eller tilbakestille fremgangen. Jobber du i nettleser i `zap.run` går du til url'en for riktig branch: https://zapp.run/github/Alv-no/flutter-workshop/tree/<BRANCH_NAME>, f.eks https://zapp.run/github/Alv-no/flutter-workshop/tree/task-2.
 
 ### Oppgave 1 - Skipp og hoi!
 Vi starter enkelt: Bli kjent med oppsettet av prosjektet og start appen. Gå inn i `lib/main.dart` og `lib/home_screen.dart` og se hva som er der.
