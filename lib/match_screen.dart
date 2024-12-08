@@ -11,6 +11,8 @@ class MatchScreen extends StatefulWidget {
 }
 
 class MatchScreenState extends State<MatchScreen> {
+  // TODO 3.1: Legge til felter for å holde på poengene til spiller 1 og 2.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +27,12 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player1),
+                      // TODO 3.2: vis fram poengene til spiller 1
                       Text("0", style: const TextStyle(fontSize: 64)),
-                      ElevatedButton(onPressed: () {}, child: const Text("+ 1"))
+                      ElevatedButton(
+                          // TODO 3.3: Oppdater poengsummen til spiller 2
+                          onPressed: () {},
+                          child: const Text("+ 1"))
                     ],
                   ),
                   const Column(
@@ -39,15 +45,21 @@ class MatchScreenState extends State<MatchScreen> {
                   Column(
                     children: [
                       Text(widget.player2),
+                      // TODO 3.2: vis fram poengene til spiller 2
                       Text("0", style: const TextStyle(fontSize: 64)),
-                      ElevatedButton(onPressed: () {}, child: const Text("+1"))
+                      ElevatedButton(
+                          // TODO 3.3: Oppdater poengsummen til spiller 2
+                          onPressed: () {},
+                          child: const Text("+1"))
                     ],
                   )
                 ],
               ),
               const SizedBox(height: 60),
               ElevatedButton(
-                  onPressed: () {}, child: const Text("Kampen er ferdig"))
+                  // TODO 4.2: Naviger til ResultScreen og send med navn og poeng på begge spillerne.
+                  onPressed: () {},
+                  child: const Text("Kampen er ferdig"))
             ])));
   }
 }
