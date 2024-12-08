@@ -24,25 +24,23 @@ Time is of the essence.
 
 
 ## Oppgaver
-Som nevnt over skal du implementere en bordtennis-poengstillingsholder :fire: ved å løse oppgavene du har fått nedenfor.  
+Som nevnt over skal du implementere en bordtennis-poengstillingsholder :fire: ved å løse oppgavene du har fått nedenfor.
 
-### Del 1 - Det grunnleggende
-
-#### Oppgave 1 - Skipp og hoi!
+### Oppgave 1 - Skipp og hoi!
 Vi starter enkelt: Bli kjent med oppsettet av prosjektet og start appen. Gå inn i `lib/main.dart` og `lib/home_screen.dart` og se hva som er der.
 
-#### Oppgave 2 - Starte en match :pong: 
+### Oppgave 2 - Starte en match :pong: 
 
-Akkurat nå skjer det ikke så mye på hjem-skjermen. Det er to input-felt og en knapp, men ingen av dem har noen funksjonalitet. Dette skal du implementere i `home_screen.dart`. 
+Akkurat nå skjer det ikke så mye på hjem-skjermen. Det er to input-felt og en knapp, men ingen av dem har noen funksjonalitet. Dette skal du implementere i `home_screen.dart`. Hold det enkelt.
 
-PS! Du trenger ikke ta stilling til `match_screen.dart` helt enda;)
+PS! Du trenger ikke ta stilling til `match_screen.dart` helt enda;) 
 
 1. Vi trenger å holde styr på navnet til de to spillerne i widgeten. Legg til passende felter i `HomeScreen`-widgeten. Flutter-dokumentasjonen er grei å ha her: https://docs.flutter.dev/cookbook/forms/text-field-changes.
 
 <details><summary>🚨Løsningsforslag</summary>
 
 Vi bruker `TextEditingController` klassen fra punkt 2 i flutter-dokumentasjonen. 
-```
+```dart
 class HomeScreen extends StatelessWidget {
     
     // Lagt til to felter: en kontroller for hver spiller
@@ -70,9 +68,12 @@ class HomeScreen extends StatelessWidget {
 
 Hint: Bruk `Navigation.push()` - https://docs.flutter.dev/cookbook/navigation/navigation-basics#2-navigate-to-the-second-route-using-navigator-push
 
+
+Verifiser at ting fungerer ved å trykke på knappen. Du skal da bli tatt til en ny skjerm hvor spillernes navn vises fram. 
+
 <details><summary>🚨Løsningsforslag</summary>
 
-```
+```dart
 ElevatedButton(
     onPressed: () {
     
@@ -88,6 +89,59 @@ ElevatedButton(
     child: const Text("Start matchen!"))
 ```
 </details>
+
+
+### Oppgave 3 - Holde stillingen på poeng :fire:
+I denne oppgaven skal vi holde styr på poengene til spillerne. Dette gjør vi i widgeten `MatchScreen` i `match_screen.dart`.
+
+PS: Vi kommer til å bruke state og `StatefulWidget`s som vi kanskje ikke har gått gjennom, men det bør være ganske likt som widgetene i den foregående oppgaven.
+
+1. Legg til nye felter i staten til `MatchScreen` for å holde på poengene til spiller 1 og 2. 
+2. Vis fram poengene til spillerne under spillernavnene deres. Denne er per nå hardkodet til å vise tallet 0.
+3. Inkrementer poengsummen til hver av spillerne ved trykk på knappen med teksten '+1' under hver spiller.
+
+
+<details><summary>🚨Løsningsforslag</summary>
+
+1.
+```dart
+class MatchScreenState extends State<MatchScreen> {
+  int player1Score = 0;
+  int player2Score = 0;
+...
+```
+2.
+```dart
+...
+Text(widget.player1),
+Text("$player1Score", style: const TextStyle(fontSize: 64)),
+...
+Text(widget.player2),
+Text("$player2Score", style: const TextStyle(fontSize: 64)),
+...
+``` 
+
+3.
+Vi er nødt til å bruke state og `setState()`-metoden i flutter. 
+
+```
+...
+ElevatedButton(
+    onPressed: () {
+    // Dytt den nye ruta/skjermen på navigasjonen. 
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MatchScreen(
+                  // navnet på disse argumentene må passe feltene i MatchScreen 
+                  player1: player1Controller.text,
+                  player2: player2Controller.text)));
+    },
+    child: const Text("Start matchen!"))
+...
+```
+</details>
+
 
 ## Getting Started
 
