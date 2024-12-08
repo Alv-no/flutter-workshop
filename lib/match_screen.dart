@@ -67,7 +67,9 @@ class MatchScreenState extends State<MatchScreen> {
               ),
               const SizedBox(height: 60),
               ElevatedButton(
-                  onPressed: () {}, child: const Text("Kampen er ferdig"))
+                  // TODO 4.2: Naviger til ResultScreen og send med navn og poeng på begge spillerne.
+                  onPressed: () {},
+                  child: const Text("Kampen er ferdig"))
             ])));
   }
 }
