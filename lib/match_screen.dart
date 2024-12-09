@@ -40,7 +40,7 @@ class MatchScreenState extends State<MatchScreen> {
                           child: const Text("+ 1"))
                     ],
                   ),
-                  const Column(
+                  Column(
                     children: [
                       // SizedBox(height: 24),
                       Text("-", style: TextStyle(fontSize: 64)),
